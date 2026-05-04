@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 venv/
 __pycache__/
 *.pyc
 dataset/
 saved_model/
+=======
+venv/
+__pycache__/
+*.pyc
+dataset/
+saved_model/
+>>>>>>> 01770150 (Initial commit)
 trained model
