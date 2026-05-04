@@ -1,0 +1,155 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionLabel {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.sectionHint {
+  font-size: 10px;
+  color: #333355;
+  letter-spacing: 1px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.moduleCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0.7;
+  transition: opacity 0.2s, border-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.moduleCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(255,255,255,0.01) 8px,
+    rgba(255,255,255,0.01) 9px
+  );
+  pointer-events: none;
+}
+
+.moduleCard:hover {
+  opacity: 0.85;
+  border-color: var(--border-glow);
+}
+
+.moduleTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.moduleIcon {
+  font-size: 22px;
+  filter: grayscale(0.5);
+}
+
+.statusBadge {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  border: 1px solid;
+  text-transform: uppercase;
+}
+
+.status_coming {
+  color: var(--warn);
+  border-color: rgba(255, 190, 0, 0.3);
+  background: var(--warn-glow);
+}
+
+.status_in {
+  color: #8888ff;
+  border-color: rgba(136, 136, 255, 0.3);
+  background: rgba(136, 136, 255, 0.08);
+}
+
+.status_planned {
+  color: var(--text-secondary);
+  border-color: var(--border-glow);
+  background: transparent;
+}
+
+.moduleTitle {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.moduleDesc {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.moduleTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.moduleTag {
+  font-size: 10px;
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: #555577;
+  letter-spacing: 0.5px;
+}
+
+.moduleBtn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 10px;
+  border: 1px dashed var(--border-glow);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: #333355;
+  cursor: not-allowed;
+  margin-top: auto;
+  transition: all 0.2s;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
